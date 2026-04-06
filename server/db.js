@@ -24,16 +24,23 @@ export const testConnection = async () => {
 const initDB = async () => {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS notes (
-      id        SERIAL PRIMARY KEY,
-      title     TEXT NOT NULL DEFAULT '',
-      body      TEXT NOT NULL DEFAULT '',
-      color     INTEGER NOT NULL DEFAULT 0,
-      pinned    BOOLEAN NOT NULL DEFAULT false,
+      id         SERIAL PRIMARY KEY,
+      title      TEXT NOT NULL DEFAULT '',
+      body       TEXT NOT NULL DEFAULT '',
+      color      INTEGER NOT NULL DEFAULT 0,
+      pinned     BOOLEAN NOT NULL DEFAULT false,
+      type       TEXT NOT NULL DEFAULT 'note',
+      items      TEXT NOT NULL DEFAULT '[]',
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `);
-  console.log("✅ Notes table ready");
+
+  // -- Add columns if upgrading from v1
+  await pool.query(`ALTER TABLE notes ADD COLUMN IF NOT EXISTS type TEXT NOT NULL DEFAULT 'note'`);
+  await pool.query(`ALTER TABLE notes ADD COLUMN IF NOT EXISTS items TEXT NOT NULL DEFAULT '[]'`);
+
+  console.log("✅ Notes table ready (v2)");
 };
 
 export default pool;
