@@ -1,0 +1,35 @@
+.app { min-height: 100vh; background: #f7f7f5; font-family: 'Georgia', serif; }
+.header { background: #1a1a2e; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+.headerInner { max-width: 860px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
+.logoText { font-size: 22px; font-weight: 700; color: #f5c518; letter-spacing: -0.5px; font-family: 'Georgia', serif; }
+.searchWrap { flex: 1; position: relative; display: flex; align-items: center; }
+.searchIcon { position: absolute; left: 10px; pointer-events: none; }
+.search { width: 100%; padding: 8px 12px 8px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.07); color: #e8e8e8; font-size: 14px; outline: none; font-family: inherit; }
+.search::placeholder { color: #888; }
+.addBtn { background: #f5c518; border: none; border-radius: 8px; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity 0.1s; }
+.addBtn:hover { opacity: 0.88; }
+.main { max-width: 860px; margin: 0 auto; padding: 24px 20px; }
+.sectionLabel { font-size: 12px; font-weight: 600; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; margin-top: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-bottom: 28px; }
+.card { border-radius: 10px; padding: 14px 16px; border: 2px solid transparent; cursor: pointer; transition: border-color 0.15s, transform 0.1s; min-height: 90px; display: flex; flex-direction: column; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+.card:hover { transform: translateY(-1px); }
+.editorCard { border: 2px solid; cursor: default; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.cardTitle { font-weight: 700; font-size: 15px; color: #1a1a2e; margin: 0 0 6px; line-height: 1.3; }
+.cardBody { font-size: 13.5px; color: #444; margin: 0; flex: 1; line-height: 1.55; word-break: break-word; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.cardDate { font-size: 11px; color: #999; }
+.cardActions { display: flex; gap: 2px; transition: opacity 0.15s; }
+.iconBtn { background: none; border: none; cursor: pointer; font-size: 14px; padding: 2px 4px; border-radius: 4px; }
+.iconBtn:hover { background: rgba(0,0,0,0.06); }
+.editorTitle { background: none; border: none; outline: none; font-weight: 700; font-size: 15px; color: #1a1a2e; font-family: 'Georgia', serif; width: 100%; margin-bottom: 6px; padding: 0; }
+.editorBody { background: none; border: none; outline: none; font-size: 13.5px; color: #444; font-family: 'Georgia', serif; width: 100%; resize: none; line-height: 1.55; padding: 0; flex: 1; }
+.editorFooter { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.colorPicker { display: flex; gap: 6px; }
+.colorDot { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; transition: transform 0.1s; }
+.colorDot:hover { transform: scale(1.2); }
+.saveBtn { background: #1a1a2e; color: #f5c518; border: none; border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+.deleteBtn { background: none; color: #c0392b; border: 1px solid #c0392b; border-radius: 6px; padding: 5px 12px; font-size: 13px; cursor: pointer; font-family: inherit; }
+.empty { text-align: center; padding: 80px 20px; }
+.emptyIcon { font-size: 48px; margin-bottom: 12px; }
+.emptyText { color: #999; font-size: 15px; }
